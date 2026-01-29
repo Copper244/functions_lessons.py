@@ -1,3 +1,36 @@
+#1 def tea_order (customer_name, tea_type):
+#2   print(customer_name, "ordered a", tea_type, "tea")
+#3   if milk!=None:
+#        print("  - Add:", milk)
+#    if sweetener!=None:
+#        print("  - Add:", sweetener)
+#4 tea_order("Alice", "chamomile")
+#5 tea_order("Bob", "black", "oat")
+#10 tea order("Tony", "black", "oat", "honey")
+
+
+#1 def tea_order(customer_name, tea_type, *extras):
+#2   print(customer_name, "ordered a", tea_type, "tea")
+#3   for arg in extras: 
+#4       print(" Add:", arg)
+#5
+#6 tea_order("Alice", "chamomile")
+#7 tea_order("Bob", "black", "oat")
+#8 tea_order("Tony", "black", "oat", "honey")
+
+
+def tea_order(customer_name, tea_type, *args, **kwargs):
+    print(customer_name, "ordered a", tea_type, "tea")
+    for arg in args:
+        print("  -Add", arg)
+    for key, value in kwargs. items():
+       print("  - Add", key, ":", value)
+       
+eves_extras = {"milk": "almond", "sweetener": "sugar", "flavor": "lemon"}
+
+tea_order("Eve", "green", milk="almond", sweetener="sugar", flavor="lemon")
+tea_order("Eve", "green", **eves_extras)
+
 # Indefinite Arguments (*args) Practice #1
 # Create a function called sum_squares that takes any number of numeric arguments, and returns the sum of their values squared.
 
